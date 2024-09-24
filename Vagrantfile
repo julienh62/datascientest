@@ -42,14 +42,14 @@ Vagrant.configure("2") do |config|
   end
 
   # Serveur pour le load balancer
-  config.vm.define "load_balancer" do |lb|
+  config.vm.define "mon_conteneur_nginx" do |lb|
     lb.vm.network "private_network", ip: "192.168.10.23"
     lb.vm.provider "docker" do |lb|
       lb.build_dir = "."
       lb.has_ssh = true
       lb.privileged = true
       lb.create_args = ["-v", "/sys/fs/cgroup:/sys/fs/cgroup:ro"]
-      lb.name = "load_balancer"
+      lb.name = "mon_conteneur_nginx"
     end
   end
 

@@ -226,3 +226,83 @@ docker exec -it mon_conteneur_nginx /var/log/nginx/error.log
 docker exec -it mon_conteneur_nginx cat /var/log/nginx/error.log
 docker exec -it mon_conteneur_nginx nginx -t
 exit
+ls -l /etc/letsencrypt/live/wordpress.julien-hennebo.cloudns.be/
+cd loadbalancer-exam
+ls -l /etc/letsencrypt/live/wordpress.julien-hennebo.cloudns.be/
+ls -l /etc/letsencrypt/live/
+sudo apt-get update
+sudo apt-get install certbot python3-certbot-nginx
+sudo certbot certonly --nginx -d wordpress.julien-hennebo.cloudns.be
+dig wordpress.julien-hennebo.cloudns.be
+curl -I http://wordpress.julien-hennebo.cloudns.be
+ls
+cd ..
+ls
+nginx -v
+sudo systemctl status nginx
+cat /etc/nginx/sites-available/default  # ou le nom de votre fichier de config spécifique
+nano etc/nginx/sites-available/default
+sudo nano /etc/nginx/sites-available/default
+sudo nginx -t
+sudo systemctl restart nginx
+curl -I http://wordpress.julien-hennebo.cloudns.be
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it <nom_du_conteneur_mariadb> /bin/bash
+docker exec -it <nom_du_conteneur_mariadbps /bin/bash
+my-containers
+my_containers
+docker exec -it mariadb /bin/bash
+docker ps
+docker exec -it mariadb /bin/bash
+cat Dockerfile
+cat Vagrantfile
+docker exec -it mariadb /bin/bash
+docker start mariadb
+mysql -u root -p
+sudo apt update
+sudo apt install mariadb-client
+docker exec -it mariadb /bin/bash
+docker logs mariadb
+docker ps -a
+docker logs mariadb
+docker exec -it mariadb /bin/bash
+docker ps
+ls
+cd loadbalancer-exam
+ls
+cd kubernetes-exam
+cd ..
+ls
+cd kubernetes-exam
+ls
+cd ..
+ls
+git add .
+git commit -m "load-balancer24sept"
+ls -a
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+nano .gitignore
+git add .
+git commit -m "Ajout des fichiers nécessaires sans les fichiers indésirables"
+git push origin main  # Remplacez 'main' par le nom de votre branche principale si nécessaire
+git rm --cached -r .  # Supprime tous les fichiers du suivi tout en les conservant sur le disque
+git add .  # Ajoutez à nouveau tous les fichiers qui ne sont pas ignorés
+git commit -m "Mise à jour du .gitignore et suppression des fichiers non désirés"
+git push origin main  # Remplacez 'main' par le nom de votre branche si nécessaire
+nano .gitignore
+git rm --cached -r .  # Désindexe tous les fichiers tout en les conservant sur le disque
+git add .  # Ajoute à nouveau les fichiers qui ne sont pas dans .gitignore
+git commit -m "Nettoyage du dépôt : suppression des fichiers indésirables"
+git status
+git push origin main  # Remplacez 'main' par le nom de votre branche si nécessaire
+git add kubernetes-exam
+git commit -m "Mise à jour de kubernetes-exam"
+git push origin main
+git status
+cd kubernetes-exam
+git status
+git add .
+git commit -m "Mise à jour des fichiers dans kubernetes-exam"
+git push origin main
+cd ..

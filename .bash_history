@@ -306,3 +306,189 @@ git add .
 git commit -m "Mise à jour des fichiers dans kubernetes-exam"
 git push origin main
 cd ..
+ls
+cd loadbalancer-exam
+ls
+cd ..
+docker ps
+docker restart mon_conteneur_nginx
+docker restart wordpress_admin
+docker restart wordpress_extra
+docker restart mariadb
+my-containers
+my_containers
+docker run -d -p 8085:80 --name mon_conteneur_nginx loadbalancer-exam
+docker run -d -p 8081:80 --name mon_conteneur_nginx loadbalancer-exam
+docker ps
+docker rm -f mon_conteneur_nginx
+docker run -d -p 8085:80 --name mon_conteneur_nginx loadbalancer-exam
+docker ps
+docker exec -it on-conteneur_nginx /bin/bash
+docker exec -it mon-conteneur_nginx /bin/bash
+docker inspect mon_conteneur_nginx | grep "Mounts"
+docker inspect mon_conteneur_nginx
+docker run -d -p 8085:80 --name mon_conteneur_nginx -v /path/local/nginx.conf:/etc/nginx/nginx.conf -v /path/local/site:/usr/share/nginx/html loadbalancer-exam
+docker exec -it mon_conteneur_nginx /bin/bash
+ls
+nano nginx.conf
+docker restart mon_conteneur_nginx
+nano nginx.conf
+docker restart mon_conteneur_nginx
+docker exec mon_conteneur_nginx nginx -s reload
+cat nginx.conf
+docker ps
+docker exec mon_conteneur_nginx nginx -s reload
+nano nginx.conf
+docker exec mon_conteneur_nginx nginx -t
+docker exec mon_conteneur_nginx cat /var/log/nginx/error.log
+curl http://wordpress.julien-hennebo.cloudns.be
+docker logs wordpress_admin
+docker exec -it mon_conteneur_nginx /bin/bash
+docker restart mon_conteneur_nginx
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it mon_conteneur_nginx curl http://wordpress_admin:80
+docker ps
+docker network ls
+docker network create mon_reseau
+docker network connect mon_reseau wordpress_admin
+docker network connect mon_reseau wordpress_extra
+docker network connect mon_reseau mon_conteneur_nginx
+docker network connect mon_reseau mariadb
+docker network inspect mon_reseau
+docker exec -it mon_conteneur_nginx curl http://172.18.0.2
+docker ps
+docker logs wordpress_admin
+docker exec -it wordpress_admin /bin/bash
+docker exec -it mon_conteneur_nginx 
+ubuntu@ip-172-31-25-251:~$ docker exec -it mon_conteneur_nginx curl http://172.18.0.2
+curl: (7) Failed to connect to 172.18.0.2 port 80: Connection refused
+ubuntu@ip-172-31-25-251:~$ docker exec -it mon_conteneur_nginx curl http://172.18.0.2
+curl: (7) Failed to connect to 172.18.0.2 port 80: Connection refused
+nslookup wordpress.julien-hennebo.cloudns.be
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it mon_conteneur_nginx nginx -s reload
+docker ps
+docker exec -it mon_conteneur_nginx cat /var/log/nginx/error.log
+docker exec -it mon_conteneur_nginx nginx -t
+cat Dockerfile
+cat Vagrantfile
+ocker ps
+docker ps
+dig 
+wordpress.julien-hennebo.cloudns.be
+dig 
+wordpress.julien-hennebo.cloudns.be
+dig wordpress.julien-hennebo.cloudns.be
+sudo iptables -L -n
+docker exec -it wordpress_admin /bin/bash
+docker exec -it mariadb /bin/bash
+docker ps
+docker exec -it wordpress_extra /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker exec -it mariadb /bin/bash
+docker ps
+docker exec -it mon-conteneur_nginx /bin/bash
+ls
+docker exec -it mon_conteneur_nginx /bin/bash
+docker ps
+docker stop $(docker ps -q)
+docker start $(docker ps -a -q)
+docker network inspect mon_reseau
+docker exec -it wordpress_extra /bin/bash
+docker ps
+docker logs wordpress_extra
+
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it mariadb /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker exec -it mon_conteneur_nginx /bin/bash
+docker logs wordpress_extra
+docker exec -it wordpress_extra /bin/bash
+docker logs mon_conteneur_nginx
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it mariadb /bin/bash
+docker exec -it wordpress_extra /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker stop $(docker ps -q)
+docker start $(docker ps -a -q)
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it wordpress_admin /bin/bash
+cat: /var/www/html/wp-content/debug.log: No such file or directory
+root@cd5ab2667d83:/# touch /var/www/html/wp-content/debug.log
+root@cd5ab2667d83:/# chmod 666 /var/www/html/wp-content/debug.log
+root@cd5ab2667d83:/# cat /var/www/html/wp-content/debug.log
+root@cd5ab2667d83:/# cat /var/www/html/wp-config.php
+<?php
+/**
+define( 'DB_COLLATE', '' );
+/**#@+
+define( 'AUTH_KEY',         'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+define( 'NONCE_KEY',        'put your unique phrase here' );
+define( 'AUTH_SALT',        'put your unique phrase here' );
+define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+define( 'NONCE_SALT',       'put your unique phrase here' );
+/**#@-*/
+/**
+$table_prefix = 'wp_';
+/**
+define('WP_DEBUG', true); // Active le mode debogage
+define('WP_DEBUG_LOG', true); // Enregistre les erreurs dans wp-content/debug.log
+define('WP_DEBUG_DISPLAY', false); // N affiche pas les erreurs a l ecran
+/* Add any custom values between this line and the "stop editing" line. */
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+        define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
+echo $undefined_variable;
+
+docker restart wordpress_admin
+docker exec -it wordpress_admin /bin/bash
+docker restart wordpress_extra /bin/bash
+docker exec -it wordpress_extra /bin/bash
+docker exec -it mariadb /bin/bash
+docker restart $(docker ps -q)
+docker exec -it mariadb /bin/bash
+docker ps
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it mariadb /bin/bash
+docker exec -it worpress_extra /bin/bash
+docker exec -it wordpress_extra /bin/bash
+docker exec -it mon_conteneur_nginx /bin/bash
+docker restart mon_conteneur_nginx
+curl -I http://wordpress.julien-hennebo.cloudns.be:8085/
+docker stop $(docker ps -q)
+docker restart $(docker ps -q)
+docker start $(docker ps -aq)
+docker exec -it mon_conteneur_nginx /bin/bash
+docker stop $(docker ps -q)
+docker start $(docker ps -aq)
+docker exec -it mon_conteneur_nginx /bin/bash
+docker ps
+docker rm 955d53454d48 48a06f8ecce1 3bb31d46ed28
+my_containers
+docker rm load_balancer
+docker stop load_balancer
+docker rm load_balancer
+cat Dockerfile
+cat Vagrantfile
+nano Vagrantfile
+vagrant reload
+docker ps
+nano Vagrantfile
+git add .
+git commit - m "config-24aout20h45"
+git commit -m "config-24aout20h45"
+git push
+vagrant up --provision
+docker stop mon_conteneur_nginx
+docker rm mon_conteneur_nginx
+vagrant reload
+docker ps

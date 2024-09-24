@@ -1,16 +1,22 @@
 # Ignorer les fichiers de configuration
 *.conf
 
+# Ignorer les fichiers de log
+*.log
+
 # Ignorer les dossiers de cache
 .cache/
 .vagrant/
-.git/
 .local/
+.routine/
 
-# Ignorer les fichiers spécifiques
-*.log
+# Ignorer les fichiers temporaires
 *.tmp
+*.bak
 
-# Ignorer tout le contenu du dossier gem
-.gem/
+# Ignorer le dossier git lui-même
+.git/
+
+# Ignorer les fichiers d'historique
+*.history
 

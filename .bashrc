@@ -115,3 +115,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+alias my_containers='docker ps | grep -E "wordpress_extra|load_balancer|wordpress_admin|mariadb"'
+

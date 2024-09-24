@@ -1,0 +1,16 @@
+# Ignorer les fichiers de configuration
+*.conf
+
+# Ignorer les dossiers de cache
+.cache/
+.vagrant/
+.git/
+.local/
+
+# Ignorer les fichiers spécifiques
+*.log
+*.tmp
+
+# Ignorer tout le contenu du dossier gem
+.gem/
+

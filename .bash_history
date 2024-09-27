@@ -492,3 +492,214 @@ docker stop mon_conteneur_nginx
 docker rm mon_conteneur_nginx
 vagrant reload
 docker ps
+nano readme.txt
+git add .
+git commit -m "add readme"
+git push
+ls
+docker ps
+vagrant up
+docker ps
+docker exec -it wordpress_extra
+docker exec -it wordpress_extra /bin/bash
+docker ps
+ls
+docker exec -it mon_conteneur_nginx /bin/bash
+nano Vagrantfile
+docker exec -it wordpress_extra /bin/bash
+vagrant ssh client1
+nano Vagrantfile
+vagrant ssh wp_admin
+nano Vagrantfile
+vagrant ssh mon_conteneur_nginx
+vagrant ssh worpress_extra
+nano Vagrantfile
+vagrant ssh wp_extra
+vagrant ssh wp_admin
+vagrant ssh db
+nano Vagrantfile
+vagrant ssh wordpress_admin
+nano Vagrantfile
+docker ps
+ls
+
+ls
+vagrant ssh wordpress_admin
+vagrant ssh wp_extra
+nano Vagrantfile
+vagrant ssh wordpress_extra
+nano Vagrantfile
+vagrant ssh mariadb
+vagrant ssh mon-conteneur_nginx
+vagrant ssh mon_conteneur_nginx
+docker exec -it mon_conteneur_nginx /bin/bash
+nano Vagrantfile
+docker exec -it mon_conteneur_nginx /bin/bash
+sudo lsof -i :80
+docker ps
+docker stop $(docker ps -q)
+docker ps
+cat readme.txt
+cat Vagrantfile
+cat readme.txt
+ls
+docker exec -it mon_conteneur_nginx /bin/bash
+docker up
+docker restart container
+vagrant up
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it wordpress_extra /bin/bash
+cat readme.txt
+cat Vagrantfile
+docker exec -it mariadb /bin/bash
+cat Dockerfile
+cat Vagrantfile
+nano Dockerfile
+docker build -t mon_projet-26sept .
+nano Dockerfile
+docker build -t mon_projet-26sept .
+docker ps
+
+vagrant up
+docker exec -it mariadb /bin/bash
+cat Dockerfile
+nano Dockerfile
+nano entrypoint.sh
+nano Dockerfile
+docker build -t mon_projet-26sept .
+docker stop mariadb
+docker rm mariadb
+docker run -d --name mariadb -p 3306:3306 mon_projet-26sept
+docker exec -it mariadb /bin/bash
+mysql -h 192.168.10.20 -u datascientest -p
+mysql -u root -p
+docker exec -it mariadb /bin/bash
+docker start mariadb
+docker exec -it mariadb /bin/bash
+nano readme.txt
+docker exec -it wordpress_extra /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker exec -it wordpress_extra /bin/bash
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it mariadb /bin/bash
+docker ps
+docker exec -it mariadb /bin/bash
+docker restart mariadb
+mysql -h 127.0.0.1 -P 3306 -u root -p
+mysql -h 127.0.0.1 -P 3306 -u datascientest -p
+docker ps
+cat readme.txt
+cat vagrantfile
+cat Vagrantfile
+nano entrypoint.sh
+docker build -t mon_projet-26sept .
+mysql -h 127.0.0.1 -P 3306 -u datascientest -p
+docker exec -it mariadb /bin/bash
+cat /etc/mysql/mariadb.conf.d/50-server.cnf
+cat /etc/mysql/mariadb.conf.d/
+cd /etc/mysql/mariadb.conf.d/
+ls
+nano entrypoint.sh
+cd ..
+docker exec -it mariadb /bin/bash
+nano entrypoint.sh
+ls
+cd /home/ubuntu
+ls
+nano entrypoint.sh
+cat Dockerfile
+mysql -h 127.0.0.1 -P 3306 -u datascientest -p
+mariadb -u root -p
+nano entrypoint.sh
+docker build -t mon_projet-26sept .
+mysql -h 127.0.0.1 -P 3306 -u datascientest -p
+docker ps
+docker stop mariadb
+docker rm mariadb
+docker ps
+docker build -t mon_projet-26sept .
+docker ps
+mkdir ~/mariadb_data
+ls
+docker run -d --name mariadb -p 3306:3306 -v ~/mariadb_data:/var/lib/mysql mon_projet-26sept
+docker ps
+docker exec -it mariadb /bin/bash
+nano entrypoint.sh
+sudo touch /var/log/mariadb_setup.log
+sudo chmod 666 /var/log/mariadb_setup.log
+nano entrypoint.sh
+docker stop mariadb
+docker rm mariadb
+docker build -t mon_projet-26sept .
+ls -ld ~/mariadb_data
+sudo chmod -R 755 ~/mariadb_data
+docker build -t mon_projet-26sept .
+nano entrypoint.sh
+cat /var/log/mariadb_setup.log
+docker run -d --name mariadb -p 3306:3306 -v ~/mariadb_data:/var/lib/mysql mon_projet-26sept
+cat /var/log/mariadb_setup.log
+docker exec -it mariadb /bin/bash
+nano readme
+nano readme.txt
+docker exec -it mariadb /bin/bash
+nano entrypoint.sh
+docker exec -it mon_conteneur_nginx /bin/bash
+docker ps
+docker logs e0161b4143da
+ls
+cd kubernetes-exam
+ls
+kubectl get pods
+cd ..
+kubectl get pods
+kubectl get namespaces
+kubectl get pods -n standard
+kubectl get deployments -n standard
+kubectl get services -n standard
+kubectl get events -n standard
+kubectl get pvc -n standard
+kubectl delete pod postgres-0 -n standard
+kubectl delete pvc postgres-storage-postgres-0 -n standard
+kubectl get pods -n standard
+kubectl get pvc -n standard
+kubectl get services -n standard
+docker ps
+kubectl get pods -n standard
+kubectl get pvc -n standard
+kubectl delete pod postgres-0 --grace-period=0 --force -n standard
+kubectl delete pvc postgres-storage-postgres-0 --grace-period=0 --force -n standard
+kubectl get pods -n standard
+kubectl get pvc -n standard
+kubectl get statefulsets -n standard
+kubectl get deployments -n standard
+kubectl delete statefulset postgres -n standard
+kubectl get pods -n standard
+kubectl get pvc -n standard
+kubectl get pv
+kubectl delete pvc postgres-storage-postgres-0 -n standard
+kubectl get pvc -n standard
+kubectl get pods -n standard
+docker ps
+docker stop e0161b4143da
+docker container prune
+docker ps
+docker exec -it mon_conteneur_nginx /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker exec -it wordpress_extra /bin/bash
+docker stop wordpress_extra
+docker stop wordpress_admin
+docker ps
+docker restart wordpress_extra
+docker restart wordpress_admin
+docker ps
+cat readme.txt
+docker exec -it wordpress_extra /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker exec -it mariadb /bin/bash
+docker exec -it mon_conteneur_nginx /bin/bash
+ls
+cd kubernetes-exam
+ls
+cd ..
+git add .
+exit

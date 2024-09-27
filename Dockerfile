@@ -11,12 +11,17 @@ RUN apt-get update && \
     apt-get update && \
     apt-get -y install openssh-server passwd sudo && \
     apt-get -y install nginx php8.0-fpm php8.0-mysql git curl iputils-ping net-tools wget && \
+    apt-get -y install mariadb-server && \
     apt-get -y install certbot python3-certbot-nginx && \
     apt-get -qq clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Copie du script d'entrée pour MariaDB
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # Configuration de Nginx
-COPY nginx.conf /etc/nginx/sites-available/default
+#COPY nginx.conf /etc/nginx/sites-available/default
 
 # Suppression des services non nécessaires
 RUN rm -f /lib/systemd/system/sysinit.target.wants/* && \
@@ -48,5 +53,5 @@ RUN chmod 600 /home/vagrant/.ssh/authorized_keys && \
 VOLUME [ "/sys/fs/cgroup" ]
 
 # Commande par défaut
-CMD ["/usr/sbin/init"]
+CMD ["/usr/local/bin/entrypoint.sh"]
 

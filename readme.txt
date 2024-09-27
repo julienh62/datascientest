@@ -49,4 +49,7 @@ define('DB_HOST', '192.168.10.20'); pointe vers mariadb
 /** port host 8082 */
 docker exec -it wordpress_admin /bin/bash
 
-
+Bonnes pratiques;  
+ se connecter au serveur avec vagrant ssh
+faire hostname -I  pour verifier adresses ip 
+ip a (égaleemnt)

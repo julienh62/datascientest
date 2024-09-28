@@ -1,12 +1,53 @@
 mon_conteneur_nginx  (loadbalancer)
 faire pointer serveur wordpress 
 dans fichiers /etc/nginx/sites-available/default 
-#  erreurduplicata, deja present dans nginx/nginx.conf
-    # Ajoutez les adresses IP des deux serveurs WordPress
+# Declaration des serveurs WordPress en backend
+upstream wordpress_backend {
     server 192.168.10.21:80;
     server 192.168.10.22:80;
- }
+}
 
+# Serveur pour les requetes HTTP (port 80)
+server {
+    listen 80;
+    server_name mon-loadbalancer.julien-hennebo.cloudns.be www.mon-loadbalancer.julien-hennebo.cloudns.be;
+
+    root /var/www/html;
+
+    # Cette section permet a certbot d'acceder au repertoire .well-known pour les validations SSL
+    location /.well-known/acme-challenge/ {
+        root /var/www/html;
+        try_files $uri =404;
+    }
+
+    # Redirection des requetes HTTP vers HTTPS
+    location / {
+        return 301 https://$server_name$request_uri;
+    }
+}
+
+# Serveur pour les requete HTTPS (port 443) avec SSL activé
+server {
+    listen 443 ssl;
+    server_name mon-loadbalancer.julien-hennebo.cloudns.be www.mon-loadbalancer.julien-hennebo.cloudns.be;
+
+    # Chemins vers les certificats SSL generes par cerbot
+    ssl_certificate /etc/letsencrypt/live/mon-loadbalancer.julien-hennebo.cloudns.be/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mon-loadbalancer.julien-hennebo.cloudns.be/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    root /var/www/html;
+
+    # Proxy pass pour rediriger les requetes vers les serveurs WordPress backend
+    location / {
+        proxy_pass http://wordpress_backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+}
 
 MariaDB
 ******************************

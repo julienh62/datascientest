@@ -703,3 +703,58 @@ ls
 cd ..
 git add .
 exit
+git add .
+ubuntu@ip-172-31-25-251:~$ git add .
+error: open("mariadb_data/ibtmp1"): Permission denied
+error: unable to index file 'mariadb_data/ibtmp1'
+fatal: adding files failed
+sudo chmod 644 mariadb_data/ibtmp1
+git add .
+git commit -m "27sept"
+git push
+nano readme.txt
+git add .
+git commit -m "27septe"
+git push
+cat readme.txt
+nano readme.txt
+cat Vagrantfile
+ls
+docker exec -it mariadb /bin/bash
+vagrant up
+docker stop mariadb
+docker rm mariadb
+vagrant up mariadb
+docker exec -it wordpress-extra /bin/bash
+docker exec -it wordpress_extra /bin/bash
+docker exec -it wordpress_admin /bin/bash
+docker exec -it mariadb /bin/bash
+ls
+cat entrypoint.sh
+cat Vagrantfile
+cat Dockerfile
+docker exec -it mariadb /bin/bash
+vagrant ssh mon_conteneur_nginx
+nano readme.txt
+cat readme.txt
+docker ps
+docker exec -it mariadb /bin/bash
+docker exec -it mon_conteneur_nginx /bin/bash
+docker stop mon_nginx_conteneur
+docker ps
+docker stop mon_conteneur_nginx
+docker ps -a
+docker start mon_conteneur_nginx
+docker ps
+docker stop mon_conteneur_nginx
+docker ps
+docker ps -a
+docker rm mon_conteneur_nginx
+docker start mon_conteneur_nginx
+find / -name nginx.conf 2>/dev/null
+docker exec -it mon_conteneur_nginx /bin/bash
+ls
+docker start mon_conteneur_nginx
+vagrant up
+docker ps -a
+docker exec -it mon_conteneur_nginx /bin/bash
